@@ -14,63 +14,83 @@ bg_code.textContent = html;
 const texts = [
     {
         title: "> Ataques a APIs",
-        example: "trecho código de exemplo 0 >--",
+        example: `if not token_valido(request.headers.get("Authorization")):
+    return "Acesso negado", 401`,
         //icon: "src/imgs/icons/exemplos/0.png",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis lectus ipsum, eget tincidunt enim rhoncus vitae. Aenean sed velit porttitor, venenatis tortor in, scelerisque turpis. Donec eu rhoncus neque. Aenean hendrerit et sem vitae consectetur. Etiam facilisis congue vulputate. Nulla malesuada magna felis, sit amet interdum orci condimentum id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet porta convallis.`
+        text: `Esses ataques exploram falhas em autenticação, autorização ou validação de dados em APIs, permitindo acesso indevido a informações ou funcionalidades restritas.`
     },
 
     {
         title: "> Engenharia Social",
-        example: "trecho código de exemplo 1 >--",
-        text: `Curabitur sodales turpis et dictum vestibulum. Phasellus quis molestie magna. Suspendisse elit risus, hendrerit ut ex non, fringilla tempus lectus. Suspendisse vitae tincidunt arcu. Praesent bibendum malesuada felis non mattis. Nullam venenatis dui nisi, sit amet interdum enim cursus sit amet. Aenean vitae enim nisl. Fusce pulvinar, neque ut tincidunt aliquam, ex leo rhoncus nunc, in aliquet nulla urna non urna. Phasellus pretium lobortis elit a ultricies. Donec eu nulla non nisl convallis accumsan.`
+        example: `Engenharia social explora o comportamento humano em vez de falhas técnicas, enganando pessoas para obter informações confidenciais como senhas ou acessos internos. É um dos ataques mais eficazes, pois contorna sistemas de segurança.`,
+        text: `Exemplo: 
+"Olá, sou do suporte técnico. Preciso da sua senha para corrigir um erro urgente."`
     },
 
     {
         title: "> Exploits automatizados",
-        example: "trecho código de exemplo 2 >--",
-        text: `Nullam ipsum sapien, viverra vitae sagittis non, vulputate id augue. Aliquam tortor ex, tempus sed iaculis nec, convallis vel sapien. Sed hendrerit mauris in ligula ultricies egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin lacinia lectus eu elit consequat faucibus. Aenean in est consequat, cursus nibh eu, molestie turpis. Sed varius ultrices dolor, sed rhoncus neque pellentesque id. Nunc et nisl fermentum, gravida velit eget, tincidunt velit. Nullam id dignissim ipsum, sit amet pulvinar risus.`
+        example: `Exemplo defensivo:
+Uso de IDS/IPS para detectar padrões automatizados`,
+        text: `São ferramentas que exploram vulnerabilidades automaticamente em larga escala, geralmente usadas por bots. Elas dependem de falhas conhecidas e sistemas desatualizados`
     },
 
     {
         title: "> Força Bruta",
-        example: "trecho código de exemplo 3 >--",
-        text: `Nunc ultrices urna dui, sit amet venenatis erat imperdiet eu. Donec enim nibh, volutpat at odio ut, sodales egestas sem. Proin non mauris vitae augue ullamcorper cursus non vel mauris. Curabitur faucibus augue velit, in facilisis orci blandit in. Aliquam imperdiet venenatis magna pulvinar mattis. Pellentesque pellentesque, sem vitae lacinia auctor, est diam pulvinar elit, eu faucibus lorem arcu sit amet nibh. Nam pellentesque mi a purus convallis posuere. Duis bibendum viverra cursus. Vivamus consectetur purus lacus, non lobortis magna viverra vitae.`
+        example: `if tentativas > 5:
+    bloquear_usuario()`,
+        text: `Ataques de força bruta tentam diversas combinações de senhas até encontrar a correta. Eles exploram senhas fracas e sistemas sem limitação de tentativas.`
     },
 
     {
         title: "> Phishing",
-        example: "trecho código de exemplo 4 >--",
-        text: `Aliquam erat volutpat. Pellentesque eget faucibus felis, a accumsan magna. Morbi vel massa vel nulla semper ornare a nec massa. Donec eu tellus lacinia, auctor nisi eu, rhoncus sem. Quisque vulputate tristique arcu vel imperdiet. Vestibulum quis posuere nisl, cursus rhoncus erat. Quisque eu sagittis mi. Cras lobortis risus nunc, ac rhoncus libero porta eget. Nam at semper neque. Donec accumsan, turpis condimentum imperdiet rutrum, risus augue feugiat mauris, eu pharetra nisi enim at felis. Nulla odio magna, lacinia id egestas ac, euismod nec erat.`
+        example: `Assunto: "Sua conta será bloqueada!"
+Link: http://site-falso-login.com`,
+        text: `Phishing é um ataque que utiliza e-mails, mensagens ou sites falsos para enganar usuários e fazê-los revelar dados sensíveis. Normalmente imita empresas ou pessoas confiáveis.`
     },
 
     {
         title: "> Ransomware",
-        example: "trecho código de exemplo 5 >--",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus aliquet libero, iaculis tempus dui. Maecenas pellentesque lacus non odio porta, consequat blandit eros semper. Fusce mollis vulputate mauris, eu eleifend leo consectetur volutpat. Quisque pharetra pulvinar odio id feugiat. Morbi quis augue eu nunc porta interdum pulvinar eu metus. Proin ornare velit non orci dictum, eget suscipit dolor aliquet. Integer blandit ac purus nec auctor. Vestibulum eu tempor velit. Curabitur ut dolor ac libero fringilla finibus. Praesent viverra pharetra justo sed euismod. Ut dignissim mattis ligula, id ullamcorper leo dapibus at. Cras maximus gravida imperdiet. Ut lobortis porttitor tincidunt. Ut placerat quam ut vehicula commodo.`
+        example: `with open("arquivo.txt", "r") as f:
+    dados = f.read()`,
+        text: `Ransomware é um malware que criptografa arquivos da vítima e exige pagamento para restaurar o acesso. Ele pode se espalhar por e-mails, downloads maliciosos ou vulnerabilidades não corrigidas.`
     },
+    
 
     {
         title: "> Scanning",
-        example: "trecho código de exemplo 6 >--",
-        text: `Ut id bibendum nulla, et ultrices leo. Praesent condimentum sagittis felis ac malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum id aliquam mauris, nec ornare lorem. Duis nec orci non purus congue congue. Nulla faucibus dapibus erat quis varius. Sed aliquet feugiat nisl, a viverra elit bibendum nec.`
+        example:`import socket
+
+def verificar_porta(host, porta):
+    s = socket.socket()
+    s.settimeout(1)
+    return s.connect_ex((host, porta)) == 0
+
+print(verificar_porta("localhost", 80))` ,
+        text: `O scanning é a etapa de reconhecimento em que um atacante (ou auditor de segurança) identifica portas abertas, serviços ativos e versões de software em um sistema. Ele é usado tanto por invasores para encontrar pontos fracos quanto por equipes de segurança para mapear riscos antes que sejam explorados.`
     },
 
     {
         title: "> SQL Injection",
-        example: "trecho código de exemplo 7 >--",
-        text: `Donec blandit porttitor tempor. Phasellus justo ligula, feugiat nec cursus viverra, elementum a turpis. Suspendisse nec aliquet ligula. Phasellus condimentum, metus vel egestas viverra, nibh ligula sollicitudin urna, vitae interdum augue nulla quis turpis. Sed fermentum elit quis neque porta, vitae faucibus elit ultricies. Curabitur mollis dolor non tortor eleifend mattis. Donec eget vehicula orci, gravida efficitur turpis.`
+        example: `query = "SELECT * FROM users WHERE name = '" + user_input + "'"
+
+
+query = "SELECT * FROM users WHERE name = %s"
+cursor.execute(query, (user_input,))`,
+        text: `SQL Injection ocorre quando dados fornecidos pelo usuário são inseridos diretamente em uma consulta SQL sem validação, permitindo manipular o banco de dados. Esse ataque pode resultar em vazamento, alteração ou exclusão de informações sensíveis.`
     },
 
     {
         title: "> Vulnerabilidades CVE",
-        example: "trecho código de exemplo 8 >--",
-        text: `Sed at mollis metus. In ornare erat enim, in tincidunt ante suscipit non. Suspendisse sollicitudin lacus eget enim maximus venenatis. Proin accumsan venenatis rutrum. Nunc tincidunt metus sit amet ipsum efficitur suscipit. Donec gravida at velit ac consectetur. Integer mattis facilisis congue. Donec porttitor blandit leo, id volutpat sapien laoreet id. Quisque dapibus nulla justo, vitae hendrerit lacus ultrices vel. Cras nec nulla lectus. Vestibulum erat ante, commodo ut bibendum at, dapibus eget velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`
+        example: `sudo apt update && sudo apt upgrade
+`,
+        text: `CVE (Common Vulnerabilities and Exposures) é um sistema padrão que cataloga falhas conhecidas em softwares. Ataques exploram sistemas que não foram atualizados contra essas falhas públicas.`
     },
 
     {
         title: "> XSS",
-        example: "trecho código de exemplo 9 >--",
-        text: `Suspendisse molestie faucibus ex aliquet lacinia. Aenean in vehicula ligula. Vivamus tempor mauris at justo maximus imperdiet. Curabitur id velit facilisis, ullamcorper magna a, euismod tellus. Vivamus cursus elit id quam venenatis, vitae ullamcorper libero egestas. Sed posuere tortor augue, ut tempor nisl molestie id. Vivamus iaculis arcu in nulla convallis, ut vehicula odio viverra. Sed quis faucibus quam, ut finibus felis. Aenean pharetra mauris eget dui fringilla feugiat. Suspendisse venenatis ut magna non tristique. Nunc sodales sodales scelerisque. In volutpat aliquam lacus imperdiet mollis. Vestibulum ullamcorper mollis ex vel blandit. Etiam at hendrerit orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum at viverra sem.`
+        example: `<p>{{ comentario | escape }}</p>
+`,
+        text: `XSS acontece quando um atacante injeta scripts maliciosos em páginas web, que são executados no navegador de outros usuários. Isso pode permitir roubo de sessões, redirecionamentos maliciosos e alteração de conteúdo.`
     },
 ]
 
@@ -118,4 +138,5 @@ function topFunction() {
         top: 0,
         behavior: "smooth"
     })
+
 }
